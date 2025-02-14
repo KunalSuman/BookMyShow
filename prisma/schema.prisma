@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin{
+    id String @id @default(uuid())
+    email String @unique
+    password String
+    name String
+    phone String
+}
+
+model customer{
+    id String @id @default(uuid())
+    email String @unique
+    password String
+    name String
+    phone String
+    balance Float
+    customer_history customer_history[]
+}
+
+model customer_history{
+    id String @id @default(uuid())
+    customer_id String
+    amount Float
+    type String
+    created_at DateTime @default(now())
+    customer customer @relation(fields: [customer_id], references: [id])
+}
+
+model company{
+    id String @id @default(uuid())
+    email String @unique
+    password String
+    name String
+    phone String
+    balance Float
+    company_history company_history[]
+    event event[]
+    advertisment advertisment[]
+}
+
+model company_history{
+    id String @id @default(uuid())
+    company_id String
+    amount Float
+    type String
+    created_at DateTime @default(now())
+    company company @relation(fields: [company_id], references: [id])
+}
+
+model event{
+    id String @id @default(uuid())
+    name String
+    description String
+    date DateTime
+    location String
+    company_id String
+    company company @relation(fields: [company_id], references: [id])
+    event_history event_history[]
+}   
+
+model advertisment{
+    id String @id @default(uuid())
+    name String
+    description String
+    image String
+    company_id String
+    company company @relation(fields: [company_id], references: [id])
+}
+
+model event_history{
+    id String @id @default(uuid())
+    event_id String
+    sender_id String
+    transaction String
+    amount Float
+    created_at DateTime @default(now())
+    event event @relation(fields: [event_id], references: [id])
+}
+
+model payment{
+    id String @id @default(uuid())
+    sender_id String
+    receiver_id String
+    amount Float
+    created_at DateTime @default(now())
+    location String
+    details String
+}
