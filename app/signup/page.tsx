@@ -7,6 +7,8 @@ export default function() {
                     SignUp
                 </div>
                 <input type = "text" placeholder="email" className="border-2 rounded-md h-1/6 w-1/2 p-4"></input>
+                <input type = "name" placeholder="name" className="border-2 rounded-md h-1/6 w-1/2 p-4"></input>
+                <input type = "phone" placeholder="phone" className="border-2 rounded-md h-1/6 w-1/2 p-4"></input>
                 <input type = "password" placeholder="password" className="border-2 rounded-md w-1/2 h-1/6 p-4"></input>
                 <button className="bg-blue-500 w-1/3 rounded-md h-1/6">Sign in</button>
             </div>
