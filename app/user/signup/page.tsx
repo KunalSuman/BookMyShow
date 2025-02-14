@@ -23,7 +23,7 @@ export default function() {
                     setPassword(e.target.value)
                 }}></input>
                 <button className="bg-blue-500 w-1/3 rounded-md h-1/6" onClick={async ()=>{
-                    await axios.post('http://localhost:3000/api/user', {email, name, phone, password, balance})
+                    await axios.post('http://localhost:3000/api/user/signup', {email, name, phone, password, balance},{ headers: { "Content-Type": "application/json" }})
                 }}>Sign in</button>
             </div>
             </div>

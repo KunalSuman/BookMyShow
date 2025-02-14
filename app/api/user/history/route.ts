@@ -5,13 +5,13 @@ export async function POST(req : NextRequest){
     const data = await req.json();
     console.log(data);
     try{
-    const user = await prisma.advertisment.create({
-        //above line translates into INSERT INTO advertisment (name, description, date, location, company_id)
+    const user = await prisma.customer_history.create({
+        //above line translates into INSERT INTO customer_history (name, description, date, location, company_id)
         data: {
-            name: data.name,
-            description: data.description,
-            image: data.date,
-            company_id : data.company_id
+            customer_id : data.customer_id,
+            amount: data.amount,
+            created_at: data.created_at,
+            transaction_id: data.transaction_id
         }
         //above data push is donne as VALUES (data.name, data.description, data.date, data.location, data.company_id);
     });

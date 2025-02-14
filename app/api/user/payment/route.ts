@@ -5,14 +5,14 @@ export async function POST(req : NextRequest){
     const data = await req.json();
     console.log(data);
     try{
-    const user = await prisma.customer.create({
-        //above line translates into INSERT INTO customer (email, name, password, phone,balance)
+    const user = await prisma.payment.create({
+        //above line translates into INSERT INTO payment (email, name, password, phone,balance)
         data: {
-            email: data.email,
-            name: data.name,
-            password: data.password,
-            phone : data.phone,
-            balance : data.balance
+            sender_id: data.sender_id,
+            receiver_id: data.receiver_id,
+            amount: data.amount,
+            location: data.location,
+            details : data.details,
         }
         //above data push is donne as VALUES (data.email, data.name, data.password, data.phone, data.balance);
     });

@@ -35,9 +35,10 @@ model customer_history{
     id String @id @default(uuid())
     customer_id String
     amount Float
-    type String
+    transaction_id String @unique
     created_at DateTime @default(now())
     customer customer @relation(fields: [customer_id], references: [id])
+    payment payment @relation(fields: [transaction_id], references: [id])
 }
 
 model company{
@@ -70,7 +71,7 @@ model event{
     company_id String
     company company @relation(fields: [company_id], references: [id])
     event_history event_history[]
-}   
+}
 
 model advertisment{
     id String @id @default(uuid())
@@ -99,4 +100,5 @@ model payment{
     created_at DateTime @default(now())
     location String
     details String
+    customer_history customer_history?
 }
