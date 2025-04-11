@@ -52,8 +52,8 @@ export default function CreateEventsPage() {
           >
             <img
               src="/opera.webp"
-              alt="Opera"
               className="w-64 h-auto object-cover rounded"
+              onClick={() => router.push('/company/home/concertEvent/opera')}
             />
             <p className="mt-2 font-semibold">Opera Concert</p>
           </div>
@@ -63,7 +63,7 @@ export default function CreateEventsPage() {
             <img
               src="/concert.jpeg"
               className="w-64 h-auto object-cover rounded"
-              onClick ={() => router.push('company/home/concertEvent/opera')}
+              onClick ={() => router.push('/company/home/concertEvent/openAir')}
             />
             <p className="mt-2 font-semibold">Open Air Concert</p>
           </div>
@@ -78,9 +78,9 @@ export default function CreateEventsPage() {
             className="text-center cursor-pointer"
           >
             <img
-              src="/lux.jpg"
-              alt="Lux"
+              src="/lux.jpeg"
               className="w-64 h-40 object-cover rounded"
+              onClick={() => router.push('/company/home/movieEvent/lux')}
             />
             <p className="mt-2 font-semibold">Lux Screening</p>
           </div>
@@ -88,9 +88,9 @@ export default function CreateEventsPage() {
             className="text-center cursor-pointer"
           >
             <img
-              src="/standard.jpg"
-              alt="Standard"
+              src="/regular.jpg"
               className="w-64 h-40 object-cover rounded"
+              onClick={() => router.push('/company/home/movieEvent/regular')}
             />
             <p className="mt-2 font-semibold">Standard Screening</p>
           </div>

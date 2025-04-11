@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function CreateConcertForm() {
+export default function createmovie() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -12,12 +12,13 @@ export default function CreateConcertForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!name || !description || !date || !location) {
       alert("Please fill in all fields.");
       return;
     }
 
-    const concertData = {
+    const movieData = {
       name,
       description,
       date: new Date(date),
@@ -25,16 +26,16 @@ export default function CreateConcertForm() {
     };
 
     try {
-      const res = await fetch("/api/concerts", {
+      const res = await fetch("/api/movies", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(concertData),
+        body: JSON.stringify(movieData),
       });
 
       if (res.ok) {
-        router.push("/concerts");
+        router.push("/movies");
       } else {
         const error = await res.json();
         alert("Error: " + error.message);
@@ -45,12 +46,15 @@ export default function CreateConcertForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto mt-10 p-4 border rounded-xl shadow">
-      <h2 className="text-xl font-bold">Create Concert</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto mt-10 p-6 border rounded-lg shadow-md flex flex-col gap-4"
+    >
+      <h1 className="text-2xl font-bold mb-4">Add a New Movie</h1>
 
       <input
         type="text"
-        placeholder="Concert Name"
+        placeholder="Movie Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
@@ -84,7 +88,7 @@ export default function CreateConcertForm() {
 
       <button
         type="submit"
-        className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
       >
         Submit
       </button>
