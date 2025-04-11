@@ -40,7 +40,7 @@ function LandingPage() {
             Our platform offers a seamless and modern approach to managing and booking your favorite shows. With an easy-to-navigate interface and a robust API, everything is designed with you in mind.
             </p>
             <p className="text-white mb-4">
-            Whether you’re a long-time movie enthusiast or new to the world of live performances, our mission is to make discovering events as enjoyable as attending them.
+            Whether you're a long-time movie enthusiast or new to the world of live performances, our mission is to make discovering events as enjoyable as attending them.
             </p>
             <p className="text-white">
             Explore the features, check out our latest offers, and join a community of passionate entertainment lovers. Scroll down to find out more!

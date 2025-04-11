@@ -51,6 +51,9 @@ model company{
     company_history company_history[]
     event event[]
     advertisment advertisment[]
+    f1 f1[]
+    movie movie[]
+    concert concert[]
 }
 
 model company_history{
@@ -101,4 +104,34 @@ model payment{
     location String
     details String
     customer_history customer_history?
+}
+
+model f1{
+    id String @id @default(uuid())
+    name String
+    description String
+    date DateTime
+    location String
+    company_id String
+    company company @relation(fields: [company_id], references: [id])
+}
+
+model movie{
+    id String @id @default(uuid())
+    name String
+    description String
+    date DateTime
+    location String
+    company_id String
+    company company @relation(fields: [company_id], references: [id])
+}
+
+model concert{
+    id String @id @default(uuid())
+    name String
+    description String
+    date DateTime
+    location String
+    company_id String
+    company company @relation(fields: [company_id], references: [id])
 }
