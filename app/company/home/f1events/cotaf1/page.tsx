@@ -10,18 +10,12 @@ export default function CreateEventForm() {
   const company_id = params.get("company_id");
   console.log("Company ID:", company_id);
   console.log("Email:", email);
-
-  // Local state for event details
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
-
-  // Accept the event parameter and call preventDefault
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-
-    // Build the payload from both the URL parameters and form inputs
+    e.preventDefault(); 
     const payload = {
       email,        // email from URL/query parameters (if needed)
       company_id,   // company id from URL/query parameters
