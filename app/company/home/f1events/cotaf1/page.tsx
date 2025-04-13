@@ -34,7 +34,6 @@ export default function CreateEventForm() {
     console.log("Submitting payload:", payload);
 
     try {
-      // Make a POST request to your API endpoint
       const response = await axios.post("/api/company/createf1", payload, {
         headers: { "Content-Type": "application/json" },
       });

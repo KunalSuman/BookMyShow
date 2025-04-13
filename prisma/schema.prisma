@@ -120,7 +120,7 @@ model movie {
   id          String   @id @default(uuid())
   name        String
   description String
-  date        DateTime
+  date        String
   location    String
   company_id  String
   company     company  @relation(fields: [company_id], references: [id])
@@ -131,8 +131,14 @@ model concert{
     id String @id @default(uuid())
     name String
     description String
-    date DateTime
+    date String
     location String
     company_id String
     company company @relation(fields: [company_id], references: [id])
+}
+
+model ticketsale{
+    id String @id @default(uuid())
+    event_id String
+    customer_id String
 }

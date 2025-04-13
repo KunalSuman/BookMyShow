@@ -6,7 +6,7 @@ import axios from "axios";
 export default function CreateEventForm() {
   const router = useRouter();
   const params = useSearchParams();
-  const email = params.get("email"); // e.g., passed via query parameters
+  const email = params.get("email"); 
   const company_id = params.get("company_id");
   console.log("Company ID:", company_id);
   console.log("Email:", email);
@@ -18,12 +18,12 @@ export default function CreateEventForm() {
 
   const handleSubmit = async () => {
     const data = {
-      email, // email from URL/query parameters
-      company_id, // company id from URL/query parameters
-      name, // event name input
-      description, // event description input
-      date, // event date input
-      location, // event location input
+      email,
+      company_id,
+      name,
+      description,
+      date,
+      location,
     };
 
     console.log(data);
