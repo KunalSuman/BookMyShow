@@ -1,21 +1,25 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function CreateEventsPage() {
-  const router = useRouter();
-
-  return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      {/* F1 Events Section */}
-      <div className="bg-white shadow-md rounded-lg p-6 mb-8">
+    const router = useRouter();
+    const params = useSearchParams()
+    const email1 = params.get("email");
+    const company_id = params.get("company_id");
+    console.log(company_id)
+    console.log(email1);
+    return (
+        <div className="min-h-screen bg-gray-100 p-6">
+        {/* F1 Events Section */}
+        <div className="bg-white shadow-md rounded-lg p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4 text-center">Create F1 Events</h2>
         <div className="flex flex-wrap justify-center gap-4">
           <div className="text-center cursor-pointer">
             <img
               src="/saopaulo.webp"
               className="w-64 h-auto object-cover rounded"
-              onClick={() => router.push('/company/home/f1events/saopualof1')}
+              onClick={() => router.push(`/company/home/f1events/saopualof1?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)}
             />
             <p className="mt-2 font-semibold">SaoPaulo</p>
           </div>
@@ -25,7 +29,11 @@ export default function CreateEventsPage() {
             <img
               src="/cotagp.jpg"
               className="w-64 h-auto object-cover rounded"
-              onClick={() => router.push('/company/home/f1events/cotaf1')}
+              onClick={() =>
+                router.push(
+                    `/company/home/f1events/cotaf1?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`
+                  )
+              }
             />
             <p className="mt-2 font-semibold">Cota GP</p>
           </div>

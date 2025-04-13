@@ -13,11 +13,12 @@ export default function SignupPage() {
 
   const handleSignup = async () => {
     try {
-      await axios.post(
+      const response = await axios.post(
         "http://localhost:3000/api/user/signup",
         { email, name, phone, password, balance },
         { headers: { "Content-Type": "application/json" } }
       );
+      console.log(response.data);
       router.push("/user/home");
     } catch (error) {
       console.error("Signup failed", error);
