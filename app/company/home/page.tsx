@@ -44,7 +44,7 @@ export default function CreateEventsPage() {
             <img
               src="/sanghaigp1.jpg"
               className="w-64 h-500 object-cover rounded"
-              onClick={() => router.push('/company/home/f1events/shangaif1')}
+              onClick={() => router.push(`/company/home/f1events/shangaif1?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)}
             />
             <p className="mt-2 font-semibold">Shangai</p>
           </div>
@@ -61,7 +61,7 @@ export default function CreateEventsPage() {
             <img
               src="/opera.webp"
               className="w-64 h-auto object-cover rounded"
-              onClick={() => router.push('/company/home/concertEvent/opera')}
+              onClick={() => router.push(`/company/home/concertEvent/opera?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)}
             />
             <p className="mt-2 font-semibold">Opera Concert</p>
           </div>
@@ -71,7 +71,7 @@ export default function CreateEventsPage() {
             <img
               src="/concert.jpeg"
               className="w-64 h-auto object-cover rounded"
-              onClick ={() => router.push('/company/home/concertEvent/openAir')}
+              onClick ={() => router.push(`/company/home/concertEvent/openAir?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)}
             />
             <p className="mt-2 font-semibold">Open Air Concert</p>
           </div>
@@ -88,7 +88,7 @@ export default function CreateEventsPage() {
             <img
               src="/lux.jpeg"
               className="w-64 h-40 object-cover rounded"
-              onClick={() => router.push('/company/home/movieEvent/lux')}
+              onClick={() => router.push(`/company/home/movieEvent/lux?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)}
             />
             <p className="mt-2 font-semibold">Lux Screening</p>
           </div>
@@ -98,7 +98,7 @@ export default function CreateEventsPage() {
             <img
               src="/regular.jpg"
               className="w-64 h-40 object-cover rounded"
-              onClick={() => router.push('/company/home/movieEvent/regular')}
+              onClick={() => router.push(`/company/home/movieEvent/regular?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)}
             />
             <p className="mt-2 font-semibold">Standard Screening</p>
           </div>

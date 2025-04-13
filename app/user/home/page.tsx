@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-gray-100 p-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-bold">Explore Events</h1>
       </header>
@@ -32,12 +32,11 @@ export default function HomePage() {
           </div>
           <div>
             <img
-              src="/silverstone-f1.jpg"
-              alt="Silverstone GP"
+              src="/sanghaigp1.jpg"
               className="w-64 h-auto object-cover rounded"
             />
             <p className="mt-2 text-center font-semibold">
-              Silverstone GP - July 12, 2025
+              Shanghai GP - July 12, 2025
             </p>
           </div>
         </div>
@@ -49,32 +48,32 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-4 justify-center">
           <div>
             <img
-              src="/movie1.jpg"
+              src="/lux.jpeg"
               alt="Movie 1"
               className="w-64 h-auto object-cover rounded"
             />
             <p className="mt-2 text-center font-semibold">
-              Blockbuster Hit - 7:00 PM
+              Marvel Thor - 7:00 PM
             </p>
           </div>
           <div>
             <img
-              src="/movie2.jpg"
+              src="/lux.jpeg"
               alt="Movie 2"
               className="w-64 h-auto object-cover rounded"
             />
             <p className="mt-2 text-center font-semibold">
-              Indie Gem - 8:30 PM
+              Street Wolf - 8:30 PM
             </p>
           </div>
           <div>
             <img
-              src="/movie3.jpg"
+              src="/regular.jpg"
               alt="Movie 3"
               className="w-64 h-auto object-cover rounded"
             />
             <p className="mt-2 text-center font-semibold">
-              Family Adventure - 5:45 PM
+              3 Idiots - 5:45 PM
             </p>
           </div>
         </div>
@@ -86,27 +85,27 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-4 justify-center">
           <div>
             <img
-              src="/concert1.jpg"
+              src="/opera.webp"
               alt="Concert 1"
               className="w-64 h-auto object-cover rounded"
             />
             <p className="mt-2 text-center font-semibold">
-              Rock Night - June 10, 2025
+              Robert Albert Hall - June 10, 2025
             </p>
           </div>
           <div>
             <img
-              src="/concert2.jpg"
+              src="/opera.webp"
               alt="Concert 2"
               className="w-64 h-auto object-cover rounded"
             />
             <p className="mt-2 text-center font-semibold">
-              Jazz Evening - June 15, 2025
+              Sedney Opera house - June 15, 2025
             </p>
           </div>
           <div>
             <img
-              src="/concert3.jpg"
+              src="/concert.jpeg"
               alt="Concert 3"
               className="w-64 h-auto object-cover rounded"
             />

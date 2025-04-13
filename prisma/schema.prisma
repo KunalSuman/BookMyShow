@@ -123,6 +123,7 @@ model movie {
   date        String
   location    String
   company_id  String
+  isLux       Boolean   @default(false)
   company     company  @relation(fields: [company_id], references: [id])
 }
 
@@ -134,6 +135,7 @@ model concert{
     date String
     location String
     company_id String
+    isOpera Boolean @default(false)
     company company @relation(fields: [company_id], references: [id])
 }
 

@@ -6,7 +6,7 @@ import axios from "axios";
 export default function CreateEventForm() {
   const router = useRouter();
   const params = useSearchParams();
-  const email = params.get("email"); 
+  const email = params.get("email");
   const company_id = params.get("company_id");
   console.log("Company ID:", company_id);
   console.log("Email:", email);
@@ -15,7 +15,7 @@ export default function CreateEventForm() {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
-
+    const val = "Sao Paulo";
   const handleSubmit = async () => {
     const data = {
       email,
@@ -23,7 +23,7 @@ export default function CreateEventForm() {
       name,
       description,
       date,
-      location,
+      location : val,
     };
 
     console.log(data);
