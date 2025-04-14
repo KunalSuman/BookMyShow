@@ -29,6 +29,7 @@ model customer{
     phone String
     balance Float
     customer_history customer_history[]
+    payment payment[]
 }
 
 model customer_history{
@@ -95,15 +96,18 @@ model event_history{
     event event @relation(fields: [event_id], references: [id])
 }
 
-model payment{
-    id String @id @default(uuid())
-    sender_id String
-    receiver_id String
-    amount Float
-    created_at DateTime @default(now())
-    location String
-    details String
-    customer_history customer_history?
+model payment {
+  id               String           @id @default(uuid())
+  sender_id        String
+  receiver_phone   String           @default("")
+  amount           Float
+  created_at       DateTime         @default(now())
+  location         String
+  details          String
+
+  // Relations
+  customer           customer         @relation(fields: [sender_id], references: [id])
+  customer_history customer_history?
 }
 
 model f1{
@@ -113,6 +117,7 @@ model f1{
     date String
     location String
     company_id String
+    isActive    Boolean @default(true)
     company company @relation(fields: [company_id], references: [id])
 }
 
@@ -124,6 +129,7 @@ model movie {
   location    String
   company_id  String
   isLux       Boolean   @default(false)
+  isActive    Boolean   @default(true)
   company     company  @relation(fields: [company_id], references: [id])
 }
 
@@ -136,6 +142,7 @@ model concert{
     location String
     company_id String
     isOpera Boolean @default(false)
+    isActive Boolean @default(true)
     company company @relation(fields: [company_id], references: [id])
 }
 
@@ -143,4 +150,13 @@ model ticketsale{
     id String @id @default(uuid())
     event_id String
     customer_id String
+}
+
+model eventpayment{
+    id String @id @default(uuid())
+    event_id String
+    customer_id String
+    reciver_id String
+    amount Float
+    created_at DateTime @default(now())
 }

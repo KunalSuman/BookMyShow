@@ -1,0 +1,22 @@
+[33m0f6dcf7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: checkout: moving from main to master
+[33md100b30[m[33m ([m[1;32mmain[m[33m)[m HEAD@{1}: commit: Major Update
+[33m0f6dcf7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{2}: checkout: moving from master to main
+[33m0f6dcf7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{3}: commit: Major Frontend and Backend Update
+[33m59cbba9[m HEAD@{4}: commit: update
+[33mdddd56f[m HEAD@{5}: commit: updated
+[33m089d493[m HEAD@{6}: commit: Api Update
+[33maa511bf[m HEAD@{7}: pull origin master: Fast-forward
+[33mf5f1822[m HEAD@{8}: pull origin master: Fast-forward
+[33m3d1e2d4[m HEAD@{9}: commit: GUI updated
+[33m5387c27[m HEAD@{10}: commit: GUI updated
+[33me769340[m HEAD@{11}: commit: Temp_Data
+[33m3e8059d[m HEAD@{12}: commit: fake data
+[33m7984f14[m HEAD@{13}: commit: 3/4 work done by kunal rest 3/4 done by himanshu
+[33m6b23f02[m HEAD@{14}: reset: moving to HEAD~1
+[33m53d35fc[m HEAD@{15}: commit: Few Pages Added
+[33m6b23f02[m HEAD@{16}: commit: user Frontend
+[33m4040420[m HEAD@{17}: commit: user Frontend
+[33m549013f[m HEAD@{18}: commit: sigin
+[33md1fddb1[m HEAD@{19}: commit: sigin
+[33m2171520[m HEAD@{20}: commit: Migrations
+[33m69ca058[m HEAD@{21}: commit (initial): Prisma

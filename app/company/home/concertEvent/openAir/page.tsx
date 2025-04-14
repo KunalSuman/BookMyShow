@@ -25,7 +25,7 @@ export default function CreateConcertdiv() {
     try {
       const res = await axios.post("/api/company/createmusic", concertData);
       if (res.status === 200 || res.status === 201) {
-        router.push("/company/home");s
+        router.push("/company/home");
       }
     } catch (err) {
       console.error("Submission failed", err);

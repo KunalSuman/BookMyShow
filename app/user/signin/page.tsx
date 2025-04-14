@@ -15,7 +15,7 @@ export default function SignInPage() {
         { email, password },
       );
       if (response.data.user) {
-        router.push(`/user/home?email=${encodeURIComponent(response.data.user.email)}&&user_id=${encodeURIComponent(response.data.user.id)}`);
+        router.push(`/user/home?email=${encodeURIComponent(response.data.user.email)}&user_id=${encodeURIComponent(response.data.user.id)}`);
       } else {
         alert("Invalid credentials");
         console.error("Sign in failed:", response.data.error);

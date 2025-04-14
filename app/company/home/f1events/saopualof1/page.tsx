@@ -55,7 +55,7 @@ export default function CreateEventForm() {
                 type="text"
                 name="name"
                 className="w-full border border-gray-300 px-4 py-2 rounded"
-                placeholder="Cota GP"
+                placeholder="Saopalo GP"
                 onChange={(e) => setName(e.target.value)}
               />
             </div>

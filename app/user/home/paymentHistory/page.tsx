@@ -13,10 +13,10 @@ interface Payment {
   details: string;
 }
 
-export default function CompanyPaymentHistoryPage() {
+export default function UserPaymentHistoryPage() {
   const searchParams = useSearchParams();
-  // Extract reciver_id from the URL query parameters (for company payment history)
-  const reciver_id = searchParams.get("company_id") || "";
+  // Extract customer_id from the URL query parameters (for user payment history)
+  const customer_id = searchParams.get("customer_id") || "";
 
   const [payments, setPayments] = useState<Payment[]>([]);
   const [loading, setLoading] = useState(true);
@@ -27,24 +27,24 @@ export default function CompanyPaymentHistoryPage() {
       try {
         const response = await axios.post(
           "/api/paymentHistory",
-          { reciver_id },
+          { customer_id },
           { headers: { "Content-Type": "application/json" } }
         );
         setPayments(response.data.payments);
       } catch (err: any) {
-        console.error("Error fetching company payment history:", err);
+        console.error("Error fetching user payment history:", err);
         setError(err.response?.data?.message || "Error fetching data");
       } finally {
         setLoading(false);
       }
     };
-    if (reciver_id) {
+    if (customer_id) {
       fetchPayments();
     } else {
-      setError("Missing reciver_id parameter.");
+      setError("Missing customer_id parameter.");
       setLoading(false);
     }
-  }, [reciver_id]);
+  }, [customer_id]);
 
   if (loading) {
     return <div className="p-6 text-center">Loading payment history...</div>;
@@ -55,7 +55,7 @@ export default function CompanyPaymentHistoryPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Company Payment History</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">User Payment History</h1>
       {payments.length === 0 ? (
         <p className="text-center text-gray-500">No payment history found.</p>
       ) : (
