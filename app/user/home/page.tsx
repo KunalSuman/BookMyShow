@@ -42,9 +42,9 @@ export default function HomePage() {
     }
     function sendlink({object}) {
         console.log(object);
-        if(object.location === "Sao Paulo") route.push(`/user/home/f1cota?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(object.id)}&reciver_id=${encodeURIComponent(object.company_id)}`);
+        if(object.location === "Sao Paulo") route.push(`/user/home/f1brazil?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(object.id)}&reciver_id=${encodeURIComponent(object.company_id)}`);
         if(object.location === "Cota") route.push(`/user/home/f1cota?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(object.id)}`);
-        if(object.location === "Sanghai") route.push(`/user/home/f1cota?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(object.id)}`);
+        if(object.location === "Sanghai") route.push(`/user/home/f1shanghai?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(object.id)}`);
     }
     function operasend({object}){
         if(object.isOpera) route.push(`/user/home/opera?user_id=${encodeURIComponent(userId)}&&event_id=${encodeURIComponent(object.id)}`);

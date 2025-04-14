@@ -14,7 +14,7 @@ export default function HomePage() {
   console.log("reciverId:", reciverId);
 
   const senddata1 = () => {
-    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=1403`;
+    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=1513`;
     console.log("Redirecting to:", url);
     router.push(url);
   };
@@ -37,7 +37,7 @@ export default function HomePage() {
             <div className="flex-1 p-4">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img
-                  src="/brazil.jpg"
+                  src="/saopaulo.webp"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -51,7 +51,7 @@ export default function HomePage() {
                     <div className="text-sm text-gray-500"></div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="text-md text-gray-700 font-bold">$1,403.00</div>
+                    <div className="text-md text-gray-700 font-bold">$1,513.00</div>
                     <button
                       className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200"
                       onClick={senddata2}
