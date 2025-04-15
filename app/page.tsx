@@ -63,30 +63,28 @@ function LandingPage() {
                 </p>
             </section>
             <section className="max-w-6xl mx-auto py-10 px-4 space-y-16">
-            {/* Block 1 - Image Left */}
             <div className="flex flex-col md:flex-row items-center gap-8">
-                <img src="/bb53773c-34ce-4fd1-829d-0f744bca89e8.png" alt="Feature 1" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+                <img src="/ss1.png" className="w-full md:w-1/2 rounded-lg shadow-lg" />
                 <div className="text-white md:w-1/2">
-                <h3 className="text-xl font-bold mb-2">Effortless Booking</h3>
-                <p>Experience lightning-fast booking for movies, events, and more with just a few clicks. No more long queues!</p>
+                <h3 className="text-xl font-bold mb-2">Made Booking Easy</h3>
+                <p>Create events and Bokks events with simple interface and no booking charges.</p>
                 </div>
             </div>
 
-            {/* Block 2 - Image Right */}
             <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                <img src="/bb53773c-34ce-4fd1-829d-0f744bca89e8.png" alt="Feature 2" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+                <img src="/ss2.png" className="w-full md:w-1/2 rounded-lg shadow-lg" />
                 <div className="text-white md:w-1/2">
-                <h3 className="text-xl font-bold mb-2">Personalized Recommendations</h3>
-                <p>Get curated recommendations based on your interests. Discover new shows and events tailored just for you!</p>
+                <h3 className="text-xl font-bold mb-2">This is what Future looks like</h3>
+                <p>Making booking easy and seemless and no booking fee that's what we all want.</p>
                 </div>
             </div>
 
-            {/* Block 3 - Image Left */}
+
             <div className="flex flex-col md:flex-row items-center gap-8">
-                <img src="/bb53773c-34ce-4fd1-829d-0f744bca89e8.png" alt="Feature 3" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+                <img src="/ss3.png" className="w-full md:w-1/2 rounded-lg shadow-lg" />
                 <div className="text-white md:w-1/2">
                 <h3 className="text-xl font-bold mb-2">Join the Community</h3>
-                <p>Be part of a growing community of entertainment lovers. Share reviews, rate your favorites, and stay connected.</p>
+                <p>Be a part of this community and have fun, enjoy life.</p>
                 </div>
             </div>
             </section>
