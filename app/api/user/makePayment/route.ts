@@ -14,20 +14,15 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-
-    // Run a transaction to update both balances and record the payment
     const [updatedCustomer, updatedCompany, eventPayment] = await prisma.$transaction([
-      // Decrease customer balance
       prisma.customer.update({
         where: { id: customer_id },
         data: { balance: { decrement: amount } },
       }),
-      // Increase company balance
       prisma.company.update({
         where: { id: reciver_id },
         data: { balance: { increment: amount } },
       }),
-      // Create an event payment record
       prisma.eventpayment.create({
         data: {
           event_id,

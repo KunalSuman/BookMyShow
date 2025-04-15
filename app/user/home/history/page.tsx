@@ -4,7 +4,6 @@ import axios from "axios";
 import { useSearchParams } from "next/navigation";
 
 export default function HistoryPage() {
-  // Extract customer (user) id from query parameters; adjust the key if needed.
   const searchParams = useSearchParams();
   const customer_id = searchParams.get("user_id") || "";
 
@@ -20,27 +19,21 @@ export default function HistoryPage() {
         return;
       }
       try {
-        // First, get the event payment history for this customer
         const historyRes = await axios.post(
           "/api/user/eventHistory",
-          { customer_id },
-          { headers: { "Content-Type": "application/json" } }
+          { customer_id }
         );
         const history = historyRes.data.history;
-
-        // For each history record, fetch event details using event_id
         const detailedHistory = await Promise.all(
           history.map(async (record: any) => {
             try {
               const detailRes = await axios.post(
                 "/api/user/getEventDetails",
-                { event_id: record.event_id },
-                { headers: { "Content-Type": "application/json" } }
+                { event_id: record.event_id }
               );
-              // Merge the event details (returned as { event, type }) into the record.
               return { ...record, eventDetails: detailRes.data.event, eventType: detailRes.data.type };
             } catch (detailError) {
-              console.error(`Error fetching details for record ${record.id}:`, detailError);
+              
               return { ...record, eventDetails: null, eventType: null };
             }
           })

@@ -18,7 +18,7 @@ export default function SignupPage() {
         { email, name, phone, password, balance },
       );
       console.log(response.data);
-      router.push("/user/home?email=" + email);
+      router.push(`/user/home?email=${encodeURIComponent(email)}&user_id=${encodeURIComponent(response.data.user.id)}`);
     } catch (error) {
       console.error("Signup failed", error);
     }

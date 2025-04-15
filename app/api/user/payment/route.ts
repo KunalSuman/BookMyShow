@@ -6,13 +6,10 @@ const prisma = new PrismaClient();
 export async function POST(req: NextRequest) {
   try {
     const { sender_id, receiver_phone, amount, location, details } = await req.json();
-
-    // Very minimal validation
     if (!sender_id || !receiver_phone || amount == null) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
-
-    // Single transaction: create payment, decrement sender's balance, increment receiver's balance
+    console.log("Received data:", { sender_id, receiver_phone, amount });
     const [paymentRecord, updatedSender, updatedReceiver] = await prisma.$transaction([
       prisma.payment.create({
         data: {
@@ -23,12 +20,13 @@ export async function POST(req: NextRequest) {
           details: details || "",
         },
       }),
+
       prisma.customer.update({
         where: { id: sender_id },
         data: { balance: { decrement: amount } },
       }),
       prisma.customer.update({
-        where: { phone: receiver_phone },
+        where: { id: receiver_phone }, // must be @unique in your schema
         data: { balance: { increment: amount } },
       }),
     ]);
