@@ -5,9 +5,9 @@ import { useSearchParams, useRouter } from 'next/navigation';
 export default function HomePage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const userId = searchParams.get("user_id") || "unknownUser";
-  const eventId = searchParams.get("event_id") || "unknownEvent";
-  const reciverId = searchParams.get("reciver_id") || "unknownReceiver";
+  const userId = searchParams.get("user_id") ;
+  const eventId = searchParams.get("event_id") ;
+  const reciverId = searchParams.get("reciver_id") ;
 
   console.log("userId:", userId);
   console.log("eventId:", eventId);

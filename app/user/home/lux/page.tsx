@@ -1,7 +1,35 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const userId = searchParams.get("user_id") || "unknownUser";
+  const eventId = searchParams.get("event_id") || "unknownEvent";
+  const reciverId = searchParams.get("reciver_id") || "unknownReceiver";
+
+  console.log("userId:", userId);
+  console.log("eventId:", eventId);
+  console.log("reciverId:", reciverId);
+
+  const senddata1 = () => {
+    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=120`;
+    console.log("Redirecting to:", url);
+    router.push(url);
+  };
+
+  const senddata2 = () => {
+    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=1199.00`;
+    console.log("Redirecting to:", url);
+    router.push(url);
+  };
+
+  const senddata3 = () => {
+    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=500`;
+    console.log("Redirecting to:", url);
+    router.push(url);
+  };
   return (
     <div className="flex min-h-[calc(100vh-65px)] bg-gray-100 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
       <main className="flex-1 p-6 overflow-y-auto">
@@ -29,7 +57,7 @@ export default function() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="text-md text-gray-700 font-bold">$1,199</div>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200">
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200" onClick={senddata2}>
                       Get Now
                     </button>
                   </div>
@@ -41,7 +69,7 @@ export default function() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="text-md text-gray-700 font-bold">$500</div>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200">
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200" onClick ={senddata3}>
                       Get Now
                     </button>
                   </div>
@@ -53,7 +81,7 @@ export default function() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="text-md text-gray-700 font-bold">$120</div>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200">
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200" onClick={senddata1}>
                       Get Now
                     </button>
                   </div>

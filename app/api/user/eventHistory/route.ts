@@ -1,4 +1,3 @@
-// app/api/user/history/route.ts
 import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -9,21 +8,20 @@ export async function POST(req: NextRequest) {
     const { customer_id } = await req.json();
 
     if (!customer_id) {
-      return NextResponse.json({ error: "Customer ID is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Customer ID is required" },
+        { status: 400 }
+      );
     }
-
-    // Fetch customer history for this customer,
-    // including the related payment data.
-    const history = await prisma.customer_history.findMany({
+    const history = await prisma.eventpayment.findMany({
       where: { customer_id },
-      include: { payment: true },
+      orderBy: { created_at: "desc" },
     });
-
     return NextResponse.json({ history });
   } catch (error: any) {
-    console.error("Error fetching history:", error);
+    console.error("Error fetching event payment history:", error);
     return NextResponse.json(
-      { error: "Error fetching customer history", message: error.message },
+      { error: "Error fetching event payment history", message: error.message },
       { status: 500 }
     );
   }

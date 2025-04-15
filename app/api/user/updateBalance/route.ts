@@ -5,21 +5,20 @@ const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
   try {
-    const { user_id } = await req.json();
+    const { user_id, newBalance } = await req.json();
     if (!user_id) {
       return NextResponse.json({ error: "User ID is required" }, { status: 400 });
     }
-    const customer = await prisma.customer.findUnique({
+    // Update the customer balance
+    const updatedCustomer = await prisma.customer.update({
       where: { id: user_id },
+      data: { balance: newBalance },
     });
-    if (!customer) {
-      return NextResponse.json({ error: "Customer not found" }, { status: 404 });
-    }
-    return NextResponse.json({ customer });
+    return NextResponse.json({ customer: updatedCustomer });
   } catch (error: any) {
-    console.error("Error fetching customer profile:", error);
+    console.error("Error updating balance:", error);
     return NextResponse.json(
-      { error: "Error fetching customer profile", message: error.message },
+      { error: "Error updating balance", message: error.message },
       { status: 500 }
     );
   }

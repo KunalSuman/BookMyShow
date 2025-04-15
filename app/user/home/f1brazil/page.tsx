@@ -54,7 +54,7 @@ export default function HomePage() {
                     <div className="text-md text-gray-700 font-bold">$1,403.00</div>
                     <button
                       className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200"
-                      onClick={senddata2}
+                      onClick={senddata1}
                     >
                       Buy Now
                     </button>
@@ -69,7 +69,7 @@ export default function HomePage() {
                     <div className="text-md text-gray-700 font-bold">$ 500</div>
                     <button
                       className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200"
-                      onClick={senddata1}
+                      onClick={senddata2}
                     >
                       Buy Now
                     </button>

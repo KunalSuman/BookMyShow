@@ -17,7 +17,10 @@ export default function Layout({ children }: LayoutProps) {
       {/* Navbar */}
       <div className="flex justify-between items-center bg-white text-black p-4 shadow-md">
         <div className="text-2xl font-bold">BookMyShow</div>
-        <div>profile</div>
+        <div onClick={() =>
+  router.push(`/user/home/profile?user_id=${encodeURIComponent(userId)}`)
+}
+>profile</div>
       </div>
       <hr className="border-t border-gray-300" />
 
@@ -59,11 +62,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </div>
-
-        {/* Vertical Divider */}
         <div className="w-px bg-gray-300 h-full"></div>
-
-        {/* Main Content */}
         <div className="flex-1 ">
           {children}
         </div>

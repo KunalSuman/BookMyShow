@@ -26,7 +26,7 @@ model customer{
     email String @unique
     password String
     name String
-    phone String
+    phone String  
     balance Float
     customer_history customer_history[]
     payment payment[]
@@ -104,8 +104,6 @@ model payment {
   created_at       DateTime         @default(now())
   location         String
   details          String
-
-  // Relations
   customer           customer         @relation(fields: [sender_id], references: [id])
   customer_history customer_history?
 }
