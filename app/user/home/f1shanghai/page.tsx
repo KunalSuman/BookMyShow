@@ -14,13 +14,13 @@ export default function HomePage() {
   console.log("reciverId:", reciverId);
 
   const senddata1 = () => {
-    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=1513`;
+    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=500`;
     console.log("Redirecting to:", url);
     router.push(url);
   };
 
   const senddata2 = () => {
-    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=500`;
+    const url = `/user/home/eventPayment?user_id=${encodeURIComponent(userId)}&event_id=${encodeURIComponent(eventId)}&reciver_id=${encodeURIComponent(reciverId)}&amount=1513`;
     console.log("Redirecting to:", url);
     router.push(url);
   };
@@ -37,7 +37,7 @@ export default function HomePage() {
             <div className="flex-1 p-4">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img
-                  src="/saopaulo.webp"
+                  src="/shanghai.jpg"
                   className="w-full h-auto object-cover"
                 />
               </div>

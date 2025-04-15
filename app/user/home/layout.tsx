@@ -23,7 +23,7 @@ export default function Layout({ children }: LayoutProps) {
 
       <div className="flex bg-white text-black">
         {/* Sidebar */}
-        <div className="w-64 p-6">
+        <div className="">
           <div className="space-y-4">
             <div
               className="p-2 cursor-pointer rounded hover:bg-gray-100"
@@ -64,7 +64,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="w-px bg-gray-300 h-full"></div>
 
         {/* Main Content */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 ">
           {children}
         </div>
       </div>

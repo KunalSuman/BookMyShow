@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-gray-100">
         <div className="flex justify-between items-center bg-white text-black p-4 shadow-md">
             <div className="text-2xl font-bold">BookMyShow</div>
-            <div>
+            <div onClick={() => router.push(`/company/home/profile?email=${encodeURIComponent(email1)}&company_id=${encodeURIComponent(company_id)}`)} className="cursor-pointer">
             profile
             </div>
             {email1 && company_id}
