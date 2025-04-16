@@ -6,9 +6,6 @@ import axios from "axios";
 export default function EventPaymentPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
-
-  // Get parameters from the URL query string
-  // For example, /user/home/eventPayment?event_id=xxx&user_id=yyy&reciver_id=zzz&amount=50
   const event_id = searchParams.get("event_id") || "";
   const customer_id = searchParams.get("user_id") || "";
   const reciver_id = searchParams.get("reciver_id") || "";
@@ -34,13 +31,8 @@ export default function EventPaymentPage() {
         headers: { "Content-Type": "application/json" },
       });
       setPaymentSuccess(true);
-      // Optionally, after a short delay, navigate away (e.g. to a thank-you page)
-      setTimeout(() => {
-         router.push("/user/home");
-      }, 2000);
-    } catch (err: any) {
-      console.error("Payment error:", err);
-      setError(err.response?.data?.message || "Payment failed");
+    } catch (e) {
+      console.error(e);
     } finally {
       setLoading(false);
     }

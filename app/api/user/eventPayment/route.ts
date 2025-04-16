@@ -14,6 +14,15 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+    const existingCount = await prisma.eventpayment.count({
+      where: { event_id },
+    });
+    if (existingCount >= 100) {
+      return NextResponse.json(
+        { error: "Event is already sold out" },
+        { status: 400 }
+      );
+    }
     const [updatedCustomer, updatedCompany, eventPayment] = await prisma.$transaction([
       prisma.customer.update({
         where: { id: customer_id },

@@ -66,32 +66,33 @@ export default function HomePage() {
 
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">F1 Races</h2>
-        {eventsData.f1Events && eventsData.f1Events.length > 0 ? (
+        {eventsData.f1Events.filter(f1 => f1.isActive).length > 0 ? (
           <div className="flex flex-wrap gap-4 justify-center">
-            {eventsData.f1Events.map((f1) => (
-              <div key={f1.id} className="w-64" onClick={()=>sendlink({object : f1})}>
-                <img
-                  src={location(f1.location)} // adjust based on your data; add an image field to your model if needed
-                  alt={f1.name}
-                  className="w-full h-auto object-cover rounded"
-                />
-                <p className="mt-2 text-center font-semibold">
-                  {f1.name} - {new Date(f1.date).toLocaleDateString()}
-                </p>
-              </div>
-            ))}
+            {eventsData.f1Events.filter(f1 => f1.isActive).map((f1) => (
+                <div key={f1.id} className="w-64" onClick={() => sendlink({ object: f1 })}>
+                  <img
+                    src={location(f1.location)}
+                    alt={f1.name}
+                    className="w-full h-auto object-cover rounded"
+                  />
+                  <p className="mt-2 text-center font-semibold">
+                    {f1.name} - {new Date(f1.date).toLocaleDateString()}
+                  </p>
+                </div>
+              ))}
           </div>
         ) : (
           <p className="text-center">No F1 events found.</p>
         )}
+
       </div>
 
       {/* Movies div */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Movies</h2>
-        {eventsData.movies && eventsData.movies.length > 0 ? (
+        {eventsData.movies && eventsData.movies.filter(movie => movie.isActive).length > 0 ? (
           <div className="flex flex-wrap gap-4 justify-center">
-            {eventsData.movies.map((movie) => (
+            {eventsData.movies.filter(movie => movie.isActive).map((movie) => (
               <div key={movie.id} className="w-64" onClick={()=>moviesend({object : movie})}>
                 <img
                   src={movie.isLux ? "/lux.jpeg":"/regular.jpg"}
@@ -114,9 +115,9 @@ export default function HomePage() {
      {/* Concerts div */}
 <div className="mb-8">
   <h2 className="text-2xl font-semibold mb-4">Concerts</h2>
-  {eventsData.concerts && eventsData.concerts.length > 0 ? (
+  {eventsData.concerts && eventsData.concerts.filter(concert => concert.isActive).length > 0 ? (
     <div className="flex flex-wrap gap-4 justify-center">
-      {eventsData.concerts.map((concert) => (
+      {eventsData.concerts.filter(concert => concert.isActive).map((concert) => (
         <div
           key={concert.id}
           className="w-64 cursor-pointer"
@@ -124,7 +125,6 @@ export default function HomePage() {
         >
           <img
             src={concert.isOpera ? "/opera.webp" : "/concert.jpeg"}
-            alt={concert.name}
             className="w-full h-auto object-cover rounded"
           />
           <p className="mt-2 text-center font-semibold">

@@ -11,10 +11,8 @@ export async function POST(request: NextRequest) {
     console.log(races);
     console.log(movies);
     console.log(concerts);
-    // Rename races to f1Events here:
     return NextResponse.json({ f1Events: races, movies, concerts });
   } catch (error) {
-    console.error("Error fetching data:", error);
-    return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
+    return NextResponse.json({error});
   }
 }
